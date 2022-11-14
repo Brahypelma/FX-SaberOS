@@ -71,8 +71,8 @@ It is important to note that this will take up some memory in proportion the the
  * or by polling the INT_STATUS register via I2C and determining the value (-> CLASH_DET_MPU_POLL)
  * of bit 6
  */
-#define CLASH_DET_MPU_INT
-//#define CLASH_DET_MPU_POLL
+//#define CLASH_DET_MPU_INT
+#define CLASH_DET_MPU_POLL
  
 /* FX DURATIONS AND SUPRESS TIMES
  *  effects cannot be retriggered for the duration
@@ -144,7 +144,7 @@ It is important to note that this will take up some memory in proportion the the
  *  If instead you would like to work with pre-set color profiles (15 different, pre-defined colors)
  *  comment out the line with GRAVITY_COLOR, which will define COLOR_PROFILE to be used.
  *************************************/
-//#define GRAVITY_COLOR
+#define GRAVITY_COLOR
 #ifndef GRAVITY_COLOR
   #define COLOR_PROFILE
 #endif
@@ -219,24 +219,4 @@ const long InternalReferenceVoltage = 1062;  // Adjust this value to your board'
 //#define LS_CLASH_HEAVY_DEBUG
 #endif
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif /* CONFIG_SW_H_ */
-

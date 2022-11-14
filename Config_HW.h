@@ -20,9 +20,9 @@
  *  If you have a home-brew solution using the Arduino Nano, choose DIYINO_PRIME below
  */
 
-//#define DIYINO_PRIME // including home-brew
+#define DIYINO_PRIME // including home-brew
 //#define DIYINO_STARDUST_V2
-#define DIYINO_STARDUST_V3
+//#define DIYINO_STARDUST_V3
 
 /***** BOARD PINOUT DEFINITIONS ******/
 
@@ -36,14 +36,14 @@
 // If your saber has only a single button to interact with the electronics, uncomment the next line
 // in case you have 2 buttons (referred to as main and aux buttons) leave this line commented out
 
-//#define SINGLEBUTTON
+#define SINGLEBUTTON
  
 #ifdef DIYINO_PRIME 
   #define MAIN_BUTTON     12
   #ifndef SINGLEBUTTON
     #define AUX_BUTTON   4
   #endif
-#else if defined DIYINO_STARDUST_V2 or defined DIYINO_STARDUST_V3
+#elif defined(DIYINO_STARDUST_V2) or defined(DIYINO_STARDUST_V3)
   #define MAIN_BUTTON      12
   #ifndef SINGLEBUTTON
     #define AUX_BUTTON   11 // 2
@@ -86,7 +86,7 @@
 #ifdef DIYINO_PRIME 
   #define MP3_PSWITCH 15 // A1
   #define FTDI_PSWITCH 16 // A2
-#else if defined DIYINO_STARDUST_V2 or defined DIYINO_STARDUST_V3 
+#elif defined(DIYINO_STARDUST_V2) or defined(DIYINO_STARDUST_V3)
   #define MP3_PSWITCH 17 // A3
   #define FTDI_PSWITCH 16 // A2
 #endif
@@ -106,7 +106,7 @@
     #define LED_RED       3
     #define LED_GREEN       5
     #define LED_BLUE      6
-  #else if defined DIYINO_STARDUST_V2 or defined DIYINO_STARDUST_V3
+  #elif defined(DIYINO_STARDUST_V2) or defined(DIYINO_STARDUST_V3)
     #define LED_RED       5
     #define LED_GREEN       6
     #define LED_BLUE      9
@@ -122,7 +122,7 @@
   
   #ifdef PIXELBLADE
     // How many leds in one strip?
-    #define NUMPIXELS 115  // can go up to 120, could lead to memory overflow if further increased, causing instability
+    #define NUMPIXELS 118  // can go up to 120, could lead to memory overflow if further increased, causing instability
     // For led chips like NEOPIXELs, which have a data line, ground, and power, you just
     // need to define DATA_PIN.
     #define DATA_PIN       13 // D13
@@ -152,7 +152,7 @@
     #define LS4       9
     #define LS5       10
     #define LS6       11
-  #else if defined DIYINO_STARDUST_V2 or defined DIYINO_STARDUST_V3
+  #elif defined(DIYINO_STARDUST_V2) or defined(DIYINO_STARDUST_V3)
     #define LS1       5
     #define LS2       6
     #define LS3      9
@@ -174,7 +174,7 @@
   #ifdef HARD_ACCENT
     #define ACCENT_LED 14 //A0
   #endif
-#else if defined DIYINO_STARDUST_V2 or defined DIYINO_STARDUST_V3
+#elif defined(DIYINO_STARDUST_V2) or defined(DIYINO_STARDUST_V3)
   #ifdef HARD_ACCENT
     #define ACCENT_LED 14 //A0 is an auxiliary pin on Stardust v2
   #endif
@@ -225,4 +225,3 @@
 #endif
 
 #endif /* CONFIG_HW_H_ */
-
